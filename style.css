@@ -1,0 +1,54 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1d201f;
+  font-family: "Arial", sans-serif;
+}
+
+p {
+  display: block;
+  font-size: 2rem;
+}
+
+.keys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.key {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.07s ease;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  user-select: none;
+}
+
+.key:active,
+.key.playing {
+  transform: scale(0.9);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #585858;
+}
+
+.key.playing {
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
