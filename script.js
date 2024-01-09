@@ -22,5 +22,21 @@ function keyUpHandler(e) {
   }
 }
 
+function setupDrumButtons() {
+  const keys = document.querySelectorAll(".key");
+  keys.forEach((key) => {
+    key.addEventListener("click", () => {
+      const soundId = `sound-${key.getAttribute("data-key")}`;
+      playDrum(soundId);
+      key.classList.add("playing");
+    });
+
+    key.addEventListener("transitionend", () => {
+      key.classList.remove("playing");
+    });
+  });
+}
+
 window.addEventListener("keydown", keyDownHandler);
 window.addEventListener("keyup", keyUpHandler);
+setupDrumButtons();
